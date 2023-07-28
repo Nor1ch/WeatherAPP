@@ -8,5 +8,6 @@ target 'WeatherAPP' do
   # Pods for WeatherAPP
 
 pod 'SnapKit', '~> 5.0.0'
+pod 'DropDown', '~> 2.3.4'
 
 end

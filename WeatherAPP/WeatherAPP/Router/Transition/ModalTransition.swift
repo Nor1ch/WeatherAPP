@@ -10,7 +10,10 @@ import UIKit
 
 final class ModalTransition : Transition {
     func open(_ viewController: UIViewController, from: UIViewController, completion: (() -> Void)?) {
-        viewController.modalPresentationStyle = .fullScreen
+        viewController.modalPresentationStyle = .automatic
+        if let vc = viewController as? SearchVC, let vcFrom = from as? SearchVCDelegate {
+                    vc.delegate = vcFrom
+                }
         from.present(viewController, animated: true, completion: completion)
     }
     

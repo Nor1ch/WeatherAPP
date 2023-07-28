@@ -18,8 +18,9 @@ extension MainRoute where Self: Router {
         let router = MainRouter(rootTransition: EmptyTransition())
         let viewModel = MainViewModel(route: router)
         let viewController = MainVC(viewModel: viewModel)
+        let navigation = UINavigationController(rootViewController: viewController)
         router.root = viewController
-        return viewController
+        return navigation
     }
 }
 
